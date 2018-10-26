@@ -1,0 +1,73 @@
+<div class="quick-config">
+  <div class="config-list">
+    <div class="top-buttons">
+      <button class="close" on:click="closeConfig()">&#10006;</button>
+    </div>
+    <div class="block-title">Config Site</div>
+    Title: <input type="text" placeholder="Enter site title" on:input="updateSite('title', event.target.value)" value="{site.title}">
+    URL: <input type="text" placeholder="Enter URL" on:input="updateSite('url', event.target.value)" value="{site.url}">
+    Character: <input type="text" placeholder="Enter Character" on:input="updateSite('character', event.target.value)" value="{site.character}">
+    Color: <input type="color" on:input="updateSite('color', event.target.value)" value="{site.color}">
+    <div class="bottom-buttons">
+      <button on:click="handleClose()">Save & Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  export default {
+    methods: {
+      saveConfig() {
+        this.store.saveSites();
+        this.closeConfig();
+      },
+      updateSite(property, value) {
+        clearTimeout(debounce);
+        var debounce = setTimeout(() => {
+          this.store.updateSite(this.store.get().quickConfigIdx, property, value);
+        }, 100);
+      },
+      closeConfig() {
+        this.store.set({quickConfig: false, quickConfigIdx: -1});
+        this.fire('resetPage');
+      },
+      handleClose() {
+        this.saveConfig();
+        this.fire('resetPage');
+      }
+    }
+  };
+</script>
+
+<style>
+  .quick-config {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%
+  }
+  .config-list {
+    margin: auto;
+    margin-top: 20vh;
+    border: 2px solid;
+    padding: 13px 25px;
+    width: fit-content;
+    height: fit-content;
+    background-color: #fff;
+    font-size: 1.13em;
+  }
+  .config-list input {
+    display: block;
+    width: 175px;
+  }
+  .config-list input[type="color"] {
+    padding: 0;
+    height: 35px;
+  }
+  .block-title {
+    width: 100%;
+    text-align: center;
+    padding: 2px;
+    font-size: 1.13em;
+  }
+</style>

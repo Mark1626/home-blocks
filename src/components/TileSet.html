@@ -1,0 +1,58 @@
+<div class="page-tile-set">
+  <ul>
+    {#each sites as site, idx}
+      <li><Tile tile={site} on:removeTile="handleRemove(idx)" on:select="handleClick(idx, site.url)"/></li>
+    {:else}
+      <li></li>
+    {/each}
+  </ul>
+</div>
+
+<script>
+  import api from '../utils/api.js';
+
+  export default {
+    components: {
+      Tile: './Tile.html'
+    },
+    methods: {
+      handleRemove(idx) {
+        event.stopPropagation();
+        this.store.get().sites[idx] = {
+          title: '',
+          url: '',
+          color: api.colors[Math.floor(Math.random() * 10)],
+          character: '-'
+        };
+        this.store.saveSites();
+        this.fire('resetPage');
+      },
+      handleClick(idx, url) {
+        if(!url || url === '') {
+          this.store.set({quickConfig: true, quickConfigIdx: idx, quickConfigSite: this.store.get().sites[idx]});
+        }
+        else {
+          window.location = url;
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  .page-tile-set {
+    display: inline-block;
+    height: 500px;
+    margin: 20px;
+  }
+
+  .page-tile-set ul {
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px;
+    grid-gap: 20px;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>

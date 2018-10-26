@@ -1,0 +1,42 @@
+<Quotes quote="{$quote}"/>
+{#if $showConfig }
+  <div transition:fade="{delay: 0, duration: 300}" class="inline">
+    <TileSet sites="{$sites}"/>
+  </div>
+{/if}
+<ConfigButton/>
+{#if $config }
+  <div transition:fade="{delay: 0, duration: 100}">
+    <Config on:resetPage="resetSites()" sites="{$sites}"/>
+  </div>
+{/if}
+{#if $quickConfig}
+  <div transition:fade="{delay: 0, duration: 140}">
+    <QuickConfig on:resetPage="resetSites()" site="{$quickConfigSite}"/>
+  </div>
+{/if}
+
+<script>
+  import { fade } from 'svelte-transitions';
+
+  export default {
+    components: {
+      TileSet: './components/TileSet.html',
+      Config: './components/Config.html',
+      Quotes: './components/Quotes.html',
+      ConfigButton: './components/ConfigButton.html',
+      QuickConfig: './components/QuickConfig.html'
+    },
+    methods: {
+      // TODO Remove this hack
+      resetSites() {
+        this.store.set({showConfig: false});
+        setTimeout(() => this.store.set({showConfig: true}), 0);
+      }
+    },
+    transitions: { fade }
+  };
+</script>
+
+<style>
+</style>

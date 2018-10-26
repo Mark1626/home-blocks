@@ -1,0 +1,34 @@
+{
+  "name": "mark-home-page",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@tivac/eslint-plugin-svelte": "^1.2.1",
+    "cross-env": "^5.1.5",
+    "css-loader": "^0.28.11",
+    "eslint": "^5.7.0",
+    "eslint-plugin-html": "^4.0.6",
+    "file-loader": "^2.0.0",
+    "grunt": "^1.0.3",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-webpack": "^3.1.3",
+    "json-loader": "^0.5.7",
+    "mini-css-extract-plugin": "^0.4.0",
+    "serve": "^6.5.5",
+    "style-loader": "^0.21.0",
+    "svelte": "^2.0.0",
+    "svelte-loader": "2.9.0",
+    "svelte-transitions": "^1.2.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "scripts": {
+    "dev_build": "cross-env NODE_ENV=development webpack --progress --colors --watch",
+    "build": "NODE_ENV=production grunt",
+    "dev": "webpack-dev-server --hot --port 3000",
+    "lint": "eslint --ext .html,.js src/"
+  },
+  "dependencies": {
+    "then-chrome": "^1.0.7"
+  }
+}
