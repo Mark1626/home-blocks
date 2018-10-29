@@ -20,6 +20,15 @@ class HomePageStore extends Store {
   saveSites(){
     API.saveSites(JSON.parse(JSON.stringify(this.get().sites)));
   }
+
+  importSites(siteList) {
+    this.set({sites: siteList});
+    this.saveSites(siteList);
+  }
+
+  exportSites() {
+    return API.exportSites(JSON.stringify(this.get().sites));
+  }
 }
 
 var quotes = Quotes.quotes;
