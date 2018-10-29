@@ -20,31 +20,52 @@
     </div>
     <div class="bottom-buttons">
       <button on:click="handleClose()">Save & Close</button>
+      <button on:click="exportSites()">Export</button>
+      <form>
+        <input type="file" name="importFile" id="importFile" on:change="importSites()"> Import
+      </form>
     </div>
   </div>
 </div>
 
 <script>
-
   export default {
     methods: {
+      closeConfig() {
+        this.store.set({config: false});
+        this.fire('resetPage');
+      },
+      exportSites() {
+        this.store.exportSites();
+      },
+      handleClose() {
+        this.saveConfig();
+        this.fire('resetPage');
+      },
       saveConfig() {
         this.store.saveSites();
         this.closeConfig();
       },
-      closeConfig() {
-        this.store.set({config: false});
-        this.fire('resetPage');
+      importSites() {
+        var file = document.getElementById('importFile').files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.readAsText(file, 'UTF-8');
+          reader.onload = (evt) => {
+            const sites = JSON.parse(evt.target.result);
+            this.store.importSites(sites);
+          };
+          reader.onerror = () => {
+            console.log('error reading file');
+          };
+        }
+        this.closeConfig();
       },
       updateSite(idx, property, value) {
         clearTimeout(debounce);
         var debounce = setTimeout(() => {
           this.store.updateSite(idx, property, value);
         }, 100);
-      },
-      handleClose() {
-        this.saveConfig();
-        this.fire('resetPage');
       }
     }
   };
