@@ -1,7 +1,6 @@
 import { Store } from 'svelte/store.js';
 import API from '../utils/api.js';
 import Quotes from '../../public/assets/quotes.json';
-import Ideas from '../../public/assets/ideas.json';
 
 class HomePageStore extends Store {
   constructor(state) {
@@ -32,7 +31,6 @@ class HomePageStore extends Store {
 }
 
 var quotes = Quotes.quotes;
-var images = Ideas.ideas.images;
 var genres = Object.keys(quotes);
 var genre = genres[Math.floor(Math.random() * genres.length)];
 var selected_quotes = quotes[genre];
@@ -40,9 +38,6 @@ var selected_quotes = quotes[genre];
 
 const store = new HomePageStore({
   sites: [],
-  idea: {
-    imgLink: images[Math.floor(Math.random() * images.length)]
-  },
   quote: selected_quotes[Math.floor(Math.random() * selected_quotes.length)],
   config: false,
   quickConfig: false,

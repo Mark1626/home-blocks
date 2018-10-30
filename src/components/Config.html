@@ -21,9 +21,8 @@
     <div class="bottom-buttons">
       <button on:click="handleClose()">Save & Close</button>
       <button on:click="exportSites()">Export</button>
-      <form>
-        <input type="file" name="importFile" id="importFile" on:change="importSites()"> Import
-      </form>
+      <label for="importFile" class="import-button">Import</label>
+      <input type="file" name="importFile" id="importFile" on:change="importSites()">
     </div>
   </div>
 </div>
@@ -87,7 +86,23 @@
     border: 2px solid;
     margin: 100px auto;
     width: fit-content;
+    width: -moz-fit-content;
     background-color: #fcfcfc;
+  }
+  .import-button {
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.4rem;
+    margin: 0 0 0.5rem 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    background-color: #fff;
+    outline: none;
+  }
+  .bottom-buttons input[type=file] {
+    visibility: hidden;
   }
   .config-list {
     position: relative;

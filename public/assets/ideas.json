@@ -1,9 +1,0 @@
-{
-  "ideas": {
-    "images": [
-      "./public/assets/pi-dark.png",
-      "./public/assets/mandelbrot-dark.png",
-      "./public/assets/mandelbrot-light.png"
-    ]
-  }
-}
