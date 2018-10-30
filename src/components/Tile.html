@@ -1,7 +1,7 @@
-<div class="page-tile" on:click="fire('select', tile.url)" >
-  <div class="page-tile-block" style="background: {tile.color}">
+<div  class="page-tile" on:click="fire('select', {event: event, url:tile.url})" >
+  <div draggable="true" class="page-tile-block" style="background: {tile.color}">
     <div class="top-buttons">
-      <button class="close" on:click="fire('removeTile')">
+      <button class="close" on:click="fire('removeTile', {event: event})">
         {#if tile.url !== ''}
           &#10006;
         {/if}
