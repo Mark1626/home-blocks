@@ -1,5 +1,5 @@
 <div class="page-tile" on:click="fire('select', tile.url)" >
-  <div class="page-tile-block" style="background: {tile.color}">
+  <div draggable="true" class="page-tile-block" style="background: {tile.color}">
     <div class="top-buttons">
       <button class="close" on:click="fire('removeTile')">
         {#if tile.url !== ''}
@@ -30,6 +30,7 @@
     padding: 20px 0;
   }
   .page-tile-block {
+    margin: 5px;
     padding: 10px;
     height: 130px;
     border-radius: 15px;
@@ -39,6 +40,11 @@
     transform: scale(1.2);
   }
   .page-tile {
+    flex-basis: 150px;
+    width: fit-content;
+    width: -moz-fit-content;
+    height: fit-content;
+    height: -moz-fit-content;
     color: #000;
   }
   .page-tile:hover {

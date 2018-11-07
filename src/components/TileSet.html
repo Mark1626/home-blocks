@@ -1,11 +1,9 @@
 <div class="page-tile-set">
-  <ul>
-    {#each sites as site, idx}
-      <li><Tile tile={site} on:removeTile="handleRemove(idx)" on:select="handleClick(idx, site.url)"/></li>
-    {:else}
-      <li></li>
-    {/each}
-  </ul>
+  {#each sites as site, idx}
+    <Tile tile={site} on:removeTile="handleRemove(idx)" on:select="handleClick(idx, site.url)"/>
+  {:else}
+    <Tile tile=""/>
+  {/each}
 </div>
 
 <script>
@@ -41,18 +39,12 @@
 
 <style>
   .page-tile-set {
-    display: inline-block;
-    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 50vw;
     margin: 20px;
-  }
-
-  .page-tile-set ul {
-    display: grid;
-    grid-template-columns: 150px 150px 150px 150px 150px;
-    grid-gap: 20px;
-    font-size: 1.3rem;
-    margin: 0;
     padding: 0;
-    list-style: none;
+    font-size: 1.3rem;
   }
 </style>
