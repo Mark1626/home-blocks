@@ -27,7 +27,7 @@
       },
       handleClick(idx, url) {
         if(!url || url === '') {
-          this.store.set({quickConfig: true, quickConfigIdx: idx, quickConfigSite: this.store.get().sites[idx]});
+          this.store.set({showQuickConfig: true, quickConfigIdx: idx, quickConfigSite: this.store.get().sites[idx]});
         }
         else {
           window.location = url;

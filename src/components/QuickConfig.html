@@ -16,6 +16,7 @@
 
 <script>
   export default {
+    // TODO Validate max-length of title, char
     methods: {
       saveConfig() {
         this.store.saveSites();
@@ -28,12 +29,10 @@
         }, 100);
       },
       closeConfig() {
-        this.store.set({quickConfig: false, quickConfigIdx: -1});
-        this.fire('resetPage');
+        this.store.set({showQuickConfig: false, quickConfigIdx: -1});
       },
       handleClose() {
         this.saveConfig();
-        this.fire('resetPage');
       }
     }
   };

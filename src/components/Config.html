@@ -32,15 +32,13 @@
     // TODO Validate max-length of title, char
     methods: {
       closeConfig() {
-        this.store.set({config: false});
-        this.fire('resetPage');
+        this.store.set({showConfig: false});
       },
       exportSites() {
         this.store.exportSites();
       },
       handleClose() {
         this.saveConfig();
-        this.fire('resetPage');
       },
       saveConfig() {
         this.store.saveSites();

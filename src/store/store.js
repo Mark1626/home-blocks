@@ -13,11 +13,14 @@ class HomePageStore extends Store {
   }
 
   updateSite(idx, property, value) {
-    this.get().sites[idx][property] = value;
+    const sites = this.get().sites;
+    sites[idx][property] = value;
+    this.set({sites: sites});
   }
 
   saveSites(){
     API.saveSites(JSON.parse(JSON.stringify(this.get().sites)));
+    this.set({sites: this.get().sites});
   }
 
   importSites(siteList) {
@@ -39,9 +42,8 @@ var selected_quotes = quotes[genre];
 const store = new HomePageStore({
   sites: [],
   quote: selected_quotes[Math.floor(Math.random() * selected_quotes.length)],
-  config: false,
-  quickConfig: false,
-  showConfig: true,
+  showConfig: false,
+  showQuickConfig: false,
   quickConfigIdx: -1,
   quickConfigSite: {}
 });
