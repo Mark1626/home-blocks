@@ -25,6 +25,15 @@
             "error",
             "unix"
         ],
+        "max-len": [
+          "error",
+          {
+            "code": 80,
+            "tabWidth": 2,
+            "ignoreTemplateLiterals": true,
+            "ignoreComments": true
+          }
+        ],
         "quotes": [
             "error",
             "single"
