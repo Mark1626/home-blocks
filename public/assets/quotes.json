@@ -1,18 +1,25 @@
 {
   "quotes": {
     "dev_humor": [
-      "I'm fairly convinced the main difference between a senior dev and a junior dev is the senior knows how to hide the evidence.— Donia, Creator of happyspacebot",
-      "A monad is just a monoid in the category of endofunctors ~ Saunders Mac Lane. Categories for the Working Mathematician"
+      "I'm fairly convinced the main difference between a senior dev and a junior dev is the senior knows how to hide the evidence.",
+      "A monad is just a monoid in the category of endofunctors",
+      "x86 has way too many instructions"
     ],
     "inspiration": [
       "He never lost heart, and never looked back. He marched in one direction, and that direction was dead ahead.",
       "Non Visum Vindere",
       "Eyes are Useless when the Mind is Blind",
-      "life is 10% what happens to me and 90% how I react to it ~ Charles Swindoll",
+      "life is 10% what happens to me and 90% how I react to it",
       "Expect the Unexpected"
     ],
+    "security": [
+      "MYSQL Server 5.5.45 secretly runs two parallel databases for people who say 'S-Q-L' and 'SEQUEL'",
+      "Turns out Cloud is just other people's computers.",
+      "An attacker can execute malicious code on their own machine and no one can stop them",
+      "At the cafe on third street, the post-it note with the WiFi password is visible from the sidewalk"
+    ],
     "dev_proverb": [
-      "Programs are meant to be read by humans and only incidentally for computers to execute ~ Donald Knuth",
+      "Programs are meant to be read by humans and only incidentally for computers to execute",
       "Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25",
       "Apps ate the world, the web ate apps, and JavaScript ate the web."
     ]
