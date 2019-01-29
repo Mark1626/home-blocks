@@ -13,8 +13,12 @@ module.exports = function(grunt) {
     copy: {
       main: {
         files: [
-          { expand: true, src: ['./index.html', './manifest.json'], dest: './build/' },
-          { expand: true, src: ['./public/**'], dest: './build/' }
+          {
+            expand: true,
+            src: ['./index.html', './manifest.json'],
+            dest: './home-blocks/'
+          },
+          { expand: true, src: ['./public/**'], dest: './home-blocks/' }
         ]
       }
     }

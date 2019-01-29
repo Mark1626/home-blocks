@@ -24,7 +24,7 @@
   },
   "scripts": {
     "dev_build": "cross-env NODE_ENV=development webpack --progress --colors --watch",
-    "build": "NODE_ENV=production grunt",
+    "build": "NODE_ENV=production grunt && zip -r home-blocks.zip home-blocks/",
     "dev": "webpack-dev-server --hot --port 3000",
     "lint": "eslint --ext .html,.js src/"
   },
