@@ -13,7 +13,7 @@ module.exports = {
     extensions: ['.js', '.html']
   },
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './home-blocks'),
     filename: '[name].js',
     chunkFilename: '[name].[id].js'
   },
