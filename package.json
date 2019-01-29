@@ -1,6 +1,6 @@
 {
   "name": "Home-Blocks",
-  "version": "0.0.2",
+  "version": "0.3",
   "devDependencies": {
     "@tivac/eslint-plugin-svelte": "^1.2.1",
     "cross-env": "^5.1.5",
@@ -26,7 +26,8 @@
     "dev_build": "cross-env NODE_ENV=development webpack --progress --colors --watch",
     "build": "NODE_ENV=production grunt && zip -r home-blocks.zip home-blocks/",
     "dev": "webpack-dev-server --hot --port 3000",
-    "lint": "eslint --ext .html,.js src/"
+    "lint": "eslint --ext .html,.js src/",
+    "test": "echo 'Add tests'"
   },
   "dependencies": {
     "then-chrome": "^1.0.7"

@@ -1,0 +1,16 @@
+language: node_js
+
+node_js:
+  - "node"
+
+dist: trusty
+
+addons:
+  sonarcloud:
+    organization: "m4rk9696-github"
+    token:
+      - $SONAR_TOKEN
+
+script:
+  - yarn build
+  - sonar-scanner
