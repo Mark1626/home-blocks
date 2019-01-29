@@ -8,9 +8,12 @@ dist: trusty
 addons:
   sonarcloud:
     organization: "m4rk9696-github"
-    token:
-      - $SONAR_TOKEN
+    token: $SONAR_TOKEN
 
 script:
   - yarn build
   - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
