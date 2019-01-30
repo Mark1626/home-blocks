@@ -3,7 +3,9 @@
     "dev_humor": [
       "I'm fairly convinced the main difference between a senior dev and a junior dev is the senior knows how to hide the evidence.",
       "A monad is just a monoid in the category of endofunctors",
-      "x86 has way too many instructions"
+      "x86 has way too many instructions",
+      "Psst, it's :q",
+      "Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25"
     ],
     "inspiration": [
       "He never lost heart, and never looked back. He marched in one direction, and that direction was dead ahead.",
@@ -15,7 +17,19 @@
     ],
     "zen": [
       "無",
-      "僧問：狗子還有佛性也無？ 師云：無。"
+      "僧問：狗子還有佛性也無？ 師云：無。",
+      "仏に逢えば仏を殺せ",
+      "逢佛殺佛"
+    ],
+    "philosophy": [
+      "Never attribute to malice that which is adequately explained by stupidity.",
+      "Pluralitas non est ponenda sine necessitate",
+      "What can be asserted without evidence can be dismissed without evidence"
+    ],
+    "mark": [
+      "Do not ask a question you know the answer to",
+      "Do not ask a question you do not want to know the answer to",
+      "Do not ask a question you do not want to be asked"
     ],
     "security": [
       "MYSQL Server 5.5.45 secretly runs two parallel databases for people who say 'S-Q-L' and 'SEQUEL'",
@@ -25,7 +39,6 @@
     ],
     "dev_proverb": [
       "Programs are meant to be read by humans and only incidentally for computers to execute",
-      "Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25",
       "Apps ate the world, the web ate apps, and JavaScript ate the web."
     ]
   }
