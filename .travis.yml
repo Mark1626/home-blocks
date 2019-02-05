@@ -12,7 +12,7 @@ addons:
 
 script:
   - yarn build
-  - sonar-scanner -X
+  - sonar-scanner -X -Dsonar.login=$SONAR_TOKEN
 
 cache:
   directories:
