@@ -16,13 +16,8 @@
     methods: {
       handleRemove(idx) {
         event.stopPropagation();
-        this.store.get().sites[idx] = {
-          title: '',
-          url: '',
-          color: api.colors[Math.floor(Math.random() * 10)],
-          character: '-'
-        };
-        this.store.saveSites();
+        this.store.deleteSite(idx);
+        // this.store.saveSites();
       },
       handleClick(idx, url) {
         if(!url || url === '') {
@@ -45,9 +40,13 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 50vw;
     margin: 20px;
     padding: 0;
     font-size: 1.3rem;
+  }
+  @media only screen and (min-width: 1000px) {
+    .page-tile-set {
+      width: 60vw;
+    }
   }
 </style>

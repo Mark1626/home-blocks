@@ -12,6 +12,26 @@ class HomePageStore extends Store {
     this.set({sites: sites});
   }
 
+  deleteSite(idx) {
+    const sites = this.get().sites;
+    // Retain the old color
+    const deleteSiteColor = sites[idx].color;
+    const newSitesList = [
+      ...sites.slice(0, idx),
+      {
+        title: '',
+        url: '',
+        color: deleteSiteColor,
+        character: '-'
+      },
+      ...sites.slice(idx+1)
+    ];
+    this.set({
+      sites: newSitesList
+    });
+    this.saveSites(newSitesList);
+  }
+
   updateSite(idx, property, value) {
     const sites = this.get().sites;
     sites[idx][property] = value;
