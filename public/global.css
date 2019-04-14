@@ -66,8 +66,10 @@ button:focus {
 	position: relative;
 }
 
-.inline {
-	padding: 0 100px;
+@media only screen and (min-width: 1000px) {
+  .inline {
+    padding: 0 100px;
+  }
 }
 
 .top-buttons, .bottom-buttons{

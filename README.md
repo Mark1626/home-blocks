@@ -12,14 +12,14 @@ Coming Soon
 
 ## Building from source
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+*Note that you will need to have [Node.js](https://nodejs.org) and Yarn installed.*
 
 ```bash
   yarn install
-  NODE_ENV=production grunt
+  yarn build
 ```
 
-The final build will be in build folder.
+The final build will be in home-blocks folder.
 * Go to Manage Extensions in Chrome
 * Select Developer Mode
 * Load Unpacked
