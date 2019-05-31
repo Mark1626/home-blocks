@@ -48,7 +48,9 @@ function exportSites(sites) {
   const mimeType = 'application/json';
   link.setAttribute('download', 'home-block-sites.json');
   link.setAttribute('href', `data:${mimeType};charset=utf-8,${encodeURIComponent(sites)}`);
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 }
 
 export default {
