@@ -1,6 +1,5 @@
 import { Store } from 'svelte/store.js';
 import API from '../utils/api.js';
-import Quotes from '../../public/assets/quotes.json';
 
 class HomePageStore extends Store {
   constructor(state) {
@@ -9,7 +8,10 @@ class HomePageStore extends Store {
 
   async init() {
     const sites = await API.getSites();
-    this.set({sites: sites});
+    let quotes = await API.getQuotes();
+    quotes = quotes.length == 0  ? ['How are you doing today'] : quotes ;
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    this.set({sites, quotes, quote});
   }
 
   deleteSite(idx) {
@@ -43,6 +45,14 @@ class HomePageStore extends Store {
     this.set({sites: this.get().sites});
   }
 
+  updateQuotes(quotes) {
+    this.set({quotes: quotes});
+  }
+
+  saveQuotes(quotes) {
+    API.setQuotes(JSON.parse(JSON.stringify(quotes)));
+  }
+
   importSites(siteList) {
     this.set({sites: siteList});
     this.saveSites(siteList);
@@ -53,12 +63,10 @@ class HomePageStore extends Store {
   }
 }
 
-const quotes = Quotes;
-
 const store = new HomePageStore({
   sites: [],
-  quotes: quotes,
-  quote: quotes[Math.floor(Math.random() * quotes.length)],
+  quotes: [],
+  quote: '',
   showConfig: false,
   showQuickConfig: false,
   quickConfigIdx: -1,

@@ -53,9 +53,24 @@ function exportSites(sites) {
   document.body.removeChild(link);
 }
 
+function getQuotes() {
+  return thenChrome.storage.sync.get(['home-block-quotes']).then((results) => {
+    if (typeof results['home-block-quotes'] === 'undefined') {
+      results['home-block-quotes'] = [];
+    }
+    return results['home-block-quotes'];
+  });
+}
+
+async function saveQuotes(quotes) {
+  new thenChrome.storage.sync.set({'home-block-quotes': quotes});
+}
+
 export default {
   saveSites: saveSites,
   getSites: getSites,
   exportSites: exportSites,
-  colors
+  colors,
+  getQuotes,
+  saveQuotes
 };
