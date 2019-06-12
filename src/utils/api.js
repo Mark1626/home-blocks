@@ -32,7 +32,7 @@ function ensureValidSites(sites) {
 
 function getSites() {
   return thenChrome.storage.sync.get(['page-topSites']).then((results) => {
-    if (typeof results['page-topSites'] === "undefined") {
+    if (typeof results['page-topSites'] === 'undefined') {
       results['page-topSites'] = [];
     }
     return ensureValidSites(results['page-topSites'].slice(0, 20));

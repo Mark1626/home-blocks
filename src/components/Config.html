@@ -54,6 +54,7 @@
             this.store.importSites(sites);
           };
           reader.onerror = () => {
+            // eslint-disable-next-line no-console
             console.log('error reading file');
           };
         }

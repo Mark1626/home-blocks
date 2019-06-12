@@ -11,6 +11,7 @@ addons:
     token: $SONAR_TOKEN
 
 script:
+  - yarn lint
   - yarn build
   - sonar-scanner
 
