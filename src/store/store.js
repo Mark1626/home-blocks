@@ -53,15 +53,12 @@ class HomePageStore extends Store {
   }
 }
 
-var quotes = Quotes.quotes;
-var genres = Object.keys(quotes);
-var genre = genres[Math.floor(Math.random() * genres.length)];
-var selected_quotes = quotes[genre];
-// var quote = selected_quotes[Math.floor(Math.random() * selected_quotes.length)];
+const quotes = Quotes;
 
 const store = new HomePageStore({
   sites: [],
-  quote: selected_quotes[Math.floor(Math.random() * selected_quotes.length)],
+  quotes: quotes,
+  quote: quotes[Math.floor(Math.random() * quotes.length)],
   showConfig: false,
   showQuickConfig: false,
   quickConfigIdx: -1,
