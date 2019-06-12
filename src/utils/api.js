@@ -62,7 +62,8 @@ function getQuotes() {
   });
 }
 
-async function saveQuotes(quotes) {
+async function setQuotes(quotes) {
+  quotes = quotes.split('\n');
   new thenChrome.storage.sync.set({'home-block-quotes': quotes});
 }
 
@@ -72,5 +73,5 @@ export default {
   exportSites: exportSites,
   colors,
   getQuotes,
-  saveQuotes
+  setQuotes
 };

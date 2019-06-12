@@ -3,6 +3,11 @@
   <TileSet sites="{$sites}"/>
 </div>
 <ConfigButton/>
+{#if $showConfigQuotes }
+  <div transition:fade="{delay: 0, duration: 100}">
+    <ConfigQuotes quotes="{$quotes}"/>
+  </div>
+{/if}
 {#if $showConfig }
   <div transition:fade="{delay: 0, duration: 100}">
     <Config sites="{$sites}"/>
@@ -23,7 +28,8 @@
       Config: './components/Config.html',
       Quotes: './components/Quotes.html',
       ConfigButton: './components/ConfigButton.html',
-      QuickConfig: './components/QuickConfig.html'
+      QuickConfig: './components/QuickConfig.html',
+      ConfigQuotes: './components/ConfigQuotes.html'
     },
     transitions: { fade }
   };

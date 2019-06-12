@@ -11,6 +11,7 @@ class HomePageStore extends Store {
     let quotes = await API.getQuotes();
     quotes = quotes.length == 0  ? ['How are you doing today'] : quotes ;
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    quotes = quotes.join('\n');
     this.set({sites, quotes, quote});
   }
 
@@ -49,8 +50,8 @@ class HomePageStore extends Store {
     this.set({quotes: quotes});
   }
 
-  saveQuotes(quotes) {
-    API.setQuotes(JSON.parse(JSON.stringify(quotes)));
+  saveQuotes() {
+    API.setQuotes(this.get().quotes);
   }
 
   importSites(siteList) {
@@ -69,6 +70,7 @@ const store = new HomePageStore({
   quote: '',
   showConfig: false,
   showQuickConfig: false,
+  showConfigQuotes: false,
   quickConfigIdx: -1,
   quickConfigSite: {}
 });

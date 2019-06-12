@@ -1,0 +1,32 @@
+<div class="config">
+  <div class="site-list">
+    <div class="top-buttons">
+      <button class="close" on:click="closeConfig()">&#10006;</button>
+    </div>
+    <span>Enter quotes each seperated by a new line</span>
+    <textarea on:input="updateQuotes(event.target.value)">{quotes}</textarea>
+    <div class="bottom-buttons">
+      <button on:click="handleClose()">Save Quotes</button>
+    </div>
+  </div>
+</div>
+
+<script>
+    export default {
+        methods: {
+            updateQuotes(quotes) {
+              clearTimeout(debounce);
+              var debounce = setTimeout(() => {
+                this.store.updateQuotes(quotes);
+              }, 100);
+            },
+            handleClose() {
+                this.store.saveQuotes();
+                this.store.set({showConfigQuotes: false});
+            },
+            closeConfig() {
+                this.store.set({showConfigQuotes: false});
+            },
+        }
+    }
+</script>
