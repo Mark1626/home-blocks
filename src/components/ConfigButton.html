@@ -1,20 +1,25 @@
-<button on:click="$set({showConfig: true})" class="config">
-  Config
-</button>
-<button on:click="$set({showConfigQuotes: true})" class="config">
-  Quotes
-</button>
+<div class="config-block">
+  <button on:click="$set({showConfig: true})" class="config">
+    Config
+  </button>
+  <button on:click="$set({showConfigQuotes: true})" class="config">
+    Quotes
+  </button>
+</div>
 
 <style>
-  .config {
+  .config-block {
     position: absolute;
     top: 0;
     right: 0;
-    border: 1px solid;
-    margin: 10px 25px 0 0px;
     width: 100px;
-    background-color: #fff;
+  }
+  .config {
+    position: relative;
+    border-radius: 12px 0 0 12px;
+    width: 100px;
     color: #000;
+    font-size: 1.17rem;
   }
   .config:hover {
     background-color: #000;
