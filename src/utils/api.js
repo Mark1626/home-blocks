@@ -63,7 +63,13 @@ function getQuotes() {
 }
 
 async function setQuotes(quotes) {
+  let trimmedQuotes = [];
   quotes = quotes.split('\n');
+  quotes.forEach(quote => {
+    if (quote.indexOf('- ') !== -1) {
+      trimmedQuotes.push(quote.substring(2));
+    }
+  });
   new thenChrome.storage.sync.set({'home-block-quotes': quotes});
 }
 

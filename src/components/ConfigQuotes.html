@@ -13,22 +13,22 @@
 
 <script>
     export default {
-        methods: {
-            updateQuotes(quotes) {
-              clearTimeout(debounce);
-              var debounce = setTimeout(() => {
-                this.store.updateQuotes(quotes);
-              }, 100);
-            },
-            handleClose() {
-                this.store.saveQuotes();
-                this.store.set({showConfigQuotes: false});
-            },
-            closeConfig() {
-                this.store.set({showConfigQuotes: false});
-            },
-        }
-    }
+      methods: {
+        updateQuotes(quotes) {
+          clearTimeout(debounce);
+          var debounce = setTimeout(() => {
+            this.store.updateQuotes(quotes);
+          }, 100);
+        },
+        handleClose() {
+          this.store.saveQuotes();
+          this.store.set({showConfigQuotes: false});
+        },
+        closeConfig() {
+          this.store.set({showConfigQuotes: false});
+        },
+      }
+    };
 </script>
 
 <style>

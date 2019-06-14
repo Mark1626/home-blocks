@@ -8,9 +8,14 @@ class HomePageStore extends Store {
 
   async init() {
     const sites = await API.getSites();
-    let quotes = await API.getQuotes();
-    quotes = quotes.length == 0  ? ['How are you doing today'] : quotes ;
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    let quotes = [];
+    let rawQuotes = await API.getQuotes();
+    rawQuotes = rawQuotes.length == 0
+      ? ['How are you doing today']
+      : rawQuotes ;
+    rawQuotes.forEach(quote => quotes.push('- ' + quote));
+    // Select quote before the quotes object is stringified
+    const quote = rawQuotes[Math.floor(Math.random() * rawQuotes.length)];
     quotes = quotes.join('\n');
     this.set({sites, quotes, quote});
   }
