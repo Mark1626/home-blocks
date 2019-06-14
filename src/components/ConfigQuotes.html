@@ -4,7 +4,7 @@
       <button class="close" on:click="closeConfig()">&#10006;</button>
     </div>
     <span>Enter quotes each seperated by a new line</span>
-    <textarea on:input="updateQuotes(event.target.value)">{quotes}</textarea>
+    <textarea class="quote-area" on:input="updateQuotes(event.target.value)">{quotes}</textarea>
     <div class="bottom-buttons">
       <button on:click="handleClose()">Save Quotes</button>
     </div>
@@ -30,3 +30,26 @@
         }
     }
 </script>
+
+<style>
+  .config {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%
+  }
+  .site-list{
+    padding: 10px 15px;
+    border: 2px solid;
+    margin: 100px auto;
+    width: fit-content;
+    width: -moz-fit-content;
+    background-color: #fcfcfc;
+  }
+  .quote-area{
+    margin: 20px 0;
+    height: fit-content;
+    width: 100%;
+    min-height: 300px;
+  }
+</style>
