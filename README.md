@@ -6,6 +6,10 @@ A Simple Customisable Home Page Chrome Extension built using [svelte](https://sv
 
 # Getting Started
 
+## Install from Firefox Addons
+
+https://addons.mozilla.org/en-US/firefox/addon/home-blocks/
+
 ## Install from Chrome Web Store
 
 Coming Soon
@@ -24,12 +28,7 @@ The final build will be in home-blocks folder.
 * Select Developer Mode
 * Load Unpacked
 
-## Website
-
-Coming Soon
-
 ## To-Do
-* Work to Release Milestone (v1.0.0)
 * Add Test Cases
 * Publish to Chrome Web Store
 
