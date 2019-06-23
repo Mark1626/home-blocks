@@ -1,6 +1,6 @@
 {
   "name": "Home-Blocks",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "devDependencies": {
     "@tivac/eslint-plugin-svelte": "^1.2.1",
     "cross-env": "^5.1.5",
