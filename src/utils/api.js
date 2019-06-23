@@ -70,7 +70,7 @@ async function setQuotes(quotes) {
       trimmedQuotes.push(quote.substring(2));
     }
   });
-  new thenChrome.storage.sync.set({'home-block-quotes': quotes});
+  new thenChrome.storage.sync.set({'home-block-quotes': trimmedQuotes});
 }
 
 export default {

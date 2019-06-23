@@ -3,7 +3,7 @@
     <div class="top-buttons">
       <button class="close" on:click="closeConfig()">&#10006;</button>
     </div>
-    <span>Enter quotes each seperated by a new line</span>
+    <span>Quotes must be entered one per line, must start with a "- "</span>
     <textarea class="quote-area" on:input="updateQuotes(event.target.value)">{quotes}</textarea>
     <div class="bottom-buttons">
       <button on:click="handleClose()">Save Quotes</button>
