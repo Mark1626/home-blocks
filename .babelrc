@@ -9,5 +9,6 @@
         ]
       }
     ]
-  ]
+  ],
+  "plugins": ["babel-plugin-jsx-control-statements"]
 }

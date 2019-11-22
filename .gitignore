@@ -6,3 +6,4 @@ home-blocks/
 *.zip
 old/
 oldr/
+dist/

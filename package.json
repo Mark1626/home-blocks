@@ -8,23 +8,33 @@
     "@babel/runtime": "^7.7.2",
     "@testing-library/react": "^9.3.2",
     "babel-loader": "^8.0.6",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.5",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.3.0",
     "html-webpack-plugin": "^3.2.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "react-testing-library": "^8.0.1",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.2.1",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
-    "webpack-html-plugin": "^0.1.1"
+    "webpack-html-plugin": "^0.1.1",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "scripts": {
     "build": "webpack --mode production --progress --colors",
     "build:dev": "webpack --mode development --progress --colors",
     "dev": "webpack-dev-server --hot --port 3000",
-    "test": "jest"
+    "test": "jest",
+    "run:firefox": "web-ext run --source-dir ./dist/"
   },
   "dependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^4.4.1",

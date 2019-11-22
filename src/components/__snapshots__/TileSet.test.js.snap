@@ -1,63 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render App should be able to mount the component 1`] = `
-<div
-  className="inline"
->
+exports[`should render TileSet should be able to mount the component 1`] = `
+<div>
   <div
-    className="sc-EHOje eqfsHd"
+    class="sc-EHOje eqfsHd"
   >
     <div
-      className="sc-ifAKCX dEMnFe"
+      class="sc-ifAKCX dEMnFe"
     >
       <div
-        className="sc-bxivhb WGaQA"
+        class="sc-bxivhb WGaQA"
         color="#f3f3f3"
       >
         <div
-          className="top-buttons"
+          class="top-buttons"
         >
           <button
-            className="sc-bdVaJa iibjPH"
+            class="sc-bdVaJa iibjPH"
           >
             ✖
           </button>
         </div>
         <span
-          className="sc-bwzfXH iyaRUM"
+          class="sc-bwzfXH iyaRUM"
         >
           D_1
         </span>
         <span
-          className="sc-htpNat fPitBk"
+          class="sc-htpNat fPitBk"
         >
           Dummy1
         </span>
       </div>
     </div>
     <div
-      className="sc-ifAKCX dEMnFe"
+      class="sc-ifAKCX dEMnFe"
     >
       <div
-        className="sc-bxivhb klfMum"
+        class="sc-bxivhb klfMum"
         color="#f2f2f2"
       >
         <div
-          className="top-buttons"
+          class="top-buttons"
         >
           <button
-            className="sc-bdVaJa iibjPH"
+            class="sc-bdVaJa iibjPH"
           >
             ✖
           </button>
         </div>
         <span
-          className="sc-bwzfXH iyaRUM"
+          class="sc-bwzfXH iyaRUM"
         >
           D_2
         </span>
         <span
-          className="sc-htpNat fPitBk"
+          class="sc-htpNat fPitBk"
         >
           Dummy2
         </span>

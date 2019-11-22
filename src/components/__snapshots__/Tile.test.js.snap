@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Tile should be able to mount the component 1`] = `
+<div>
+  <div
+    class="sc-ifAKCX dEMnFe"
+  >
+    <div
+      class="sc-bxivhb WGaQA"
+      color="#f3f3f3"
+    >
+      <div
+        class="top-buttons"
+      >
+        <button
+          class="sc-bdVaJa iibjPH"
+        >
+          ✖
+        </button>
+      </div>
+      <span
+        class="sc-bwzfXH iyaRUM"
+      >
+        D
+      </span>
+      <span
+        class="sc-htpNat fPitBk"
+      >
+        Dummy
+      </span>
+    </div>
+  </div>
+</div>
+`;
