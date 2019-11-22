@@ -1,9 +1,5 @@
-import App from './App.html';
-import store from './store/store.js';
+import React from 'react';
+import {render} from 'react-dom';
+import App from './App';
 
-const app = new App({
-  target: document.querySelector('#app'),
-  store
-});
-
-export default app;
+render(<App/>, document.getElementById("app"));

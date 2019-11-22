@@ -2,33 +2,32 @@
   "name": "Home-Blocks",
   "version": "0.4.6",
   "devDependencies": {
-    "@tivac/eslint-plugin-svelte": "^1.3.0",
-    "cross-env": "^5.2.0",
-    "css-loader": "3.0.0",
-    "eslint": "^6.0.1 ",
-    "eslint-plugin-html": "^6.0.0",
-    "file-loader": "^4.0.0",
-    "grunt": "^1.0.4",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-webpack": "^3.1.3",
-    "json-loader": "^0.5.7",
-    "mini-css-extract-plugin": "^0.7.0",
-    "style-loader": "^0.23.1",
-    "svelte": "^2.0.0",
-    "svelte-loader": "2.9.0",
-    "svelte-transitions": "^1.2.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.7.2"
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "@babel/runtime": "^7.7.2",
+    "@testing-library/react": "^9.3.2",
+    "babel-loader": "^8.0.6",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "react-test-renderer": "^16.12.0",
+    "react-testing-library": "^8.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0",
+    "webpack-html-plugin": "^0.1.1"
   },
   "scripts": {
-    "dev_build": "cross-env NODE_ENV=development webpack --progress --colors --watch",
-    "build": "NODE_ENV=production grunt && cd home-blocks; zip -r -FS ../home-blocks.zip *",
+    "build": "webpack --mode production --progress --colors",
+    "build:dev": "webpack --mode development --progress --colors",
     "dev": "webpack-dev-server --hot --port 3000",
-    "lint": "eslint --ext .html,.js src/",
-    "test": "echo 'Add tests'"
+    "test": "jest"
   },
   "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
     "then-chrome": "^1.0.7"
   }
 }

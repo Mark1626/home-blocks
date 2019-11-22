@@ -4,3 +4,5 @@ public/bundle.*
 *.log
 home-blocks/
 *.zip
+old/
+oldr/
