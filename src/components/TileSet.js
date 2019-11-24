@@ -7,8 +7,8 @@ const TileSet = () => {
   return (
     <PageTileSet>
       <SiteContext.Consumer>
-        {tiles => (
-          <For each="tile" of={tiles} index="index">
+        {tiles =>
+          tiles.map((tile, index) => (
             <Tile
               key={index}
               character={tile.character}
@@ -16,8 +16,8 @@ const TileSet = () => {
               color={tile.color}
               title={tile.title}
             />
-          </For>
-        )}
+          ))
+        }
       </SiteContext.Consumer>
     </PageTileSet>
   )

@@ -8,9 +8,7 @@ const Tile = ({ url, character, color, title }) => {
       <PageTile>
         <PageTileBlock color={color}>
           <div className="top-buttons">
-            <Close>
-              <If condition={url !== ''}>&#10006;</If>
-            </Close>
+            <Close>{url !== '' ? '✖' : ''}</Close>
           </div>
           <PageTileChar>{character}</PageTileChar>
           <PageTileTitle>{title}</PageTileTitle>

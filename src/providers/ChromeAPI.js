@@ -31,12 +31,15 @@ const ensureValidSites = sites => {
   return sites
 }
 
+/**
+ * Fetch sites from Chrome Browser Extension API
+ */
 export const getSites = async () => {
   const results = await thenChrome.storage.sync.get(['page-topSites'])
   if (typeof results['page-topSites'] === 'undefined') {
     results['page-topSites'] = []
   }
-  return ensureValidSites(results['page-topSites'].slice(0, 20))
+  return results['page-topSites'].slice(0, 20)
 }
 
 export const useSites = () => {
@@ -55,10 +58,16 @@ export const useSites = () => {
   ]);
 
   useEffect(() => {
-    getSites
-    .then(sites => setSites(sites))
-    .catch(() => console.log('Error fetching sites'))
-  });
+    getSites()
+    .then(sites => {
+      console.log(`Fetched ${sites} setting ${JSON.stringify(ensureValidSites(sites))}`)
+      setSites(ensureValidSites(sites))
+    })
+    .catch((e) => {
+      console.log('Error fetching sites', e)
+      setSites(ensureValidSites([]))
+    })
+  }, []);
 
   return sites;
 }
