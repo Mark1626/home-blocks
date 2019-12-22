@@ -2,3 +2,10 @@ fileignoreconfig:
 - filename: yarn.lock
   checksum: cf4ac8207bc71388c1b7b9193b252863c4be2455434af440fdb3e31a04e40d5e
   ignore_detectors: []
+fileignoreconfig:
+- filename: config/env.js
+  checksum: 0c994ad5bc2ff02e636cfc27bd3b57fd42ab5705ee111041a21ae710638370a1
+  ignore_detectors: []
+- filename: config/jest/fileTransform.js
+  checksum: 90b04b8ad823f8166ea6a4be0a426787ac25ee569135cf4ecfd4c34577309072
+  ignore_detectors: []
