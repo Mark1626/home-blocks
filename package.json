@@ -12,7 +12,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "run:firefox": "web-ext run --source-dir ./dist/"
+    "run:firefox": "web-ext run --source-dir ./dist/",
+    "prettier": "prettier --check **/*.js",
+    "prettier:fix": "prettier --write **/*.js"
   },
   "dependencies": {
     "@babel/core": "7.6.0",
