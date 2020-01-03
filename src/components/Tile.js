@@ -1,12 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Close from './Close'
+import ConfigContext from '../providers/ConfigContext'
 
-const Tile = ({ url, character, color, title }) => {
+const Tile = ({ index, url, character, color, title }) => {
+  const { setQuickConfigIndex, setQuickConfig } = useContext(ConfigContext)
+  const handleClick = (event, index) => {
+    event.preventDefault()
+    setQuickConfig(true)
+    setQuickConfigIndex(index)
+  }
   return (
     <>
       <PageTile>
-        <PageTileBlock color={color}>
+        <PageTileBlock
+          color={color}
+          onClick={event => handleClick(event, index)}
+        >
           <div className="top-buttons">
             <Close>{url !== '' ? '✖' : ''}</Close>
           </div>

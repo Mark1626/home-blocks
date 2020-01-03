@@ -14,7 +14,7 @@ const colors = [
   '#a3c4fd',
 ]
 
-const ensureValidSites = sites => {
+export const ensureValidSites = sites => {
   for (var i = 0; i < 20; ++i) {
     if (!sites[i]) {
       sites.push({
@@ -42,32 +42,6 @@ export const getSites = async () => {
   return results['page-topSites'].slice(0, 20)
 }
 
-export const useSites = () => {
-  const [sites, setSites] = useState([
-    {
-      title: 'Dummy1',
-      url: 'dummy_url_1',
-      character: 'D_1',
-      color: '#f3f3f3',
-    },{
-      title: 'Dummy2',
-      url: 'dummy_url_2',
-      character: 'D_2',
-      color: '#f2f2f2',
-    },
-  ]);
-
-  useEffect(() => {
-    getSites()
-    .then(sites => {
-      console.log(`Fetched ${sites} setting ${JSON.stringify(ensureValidSites(sites))}`)
-      setSites(ensureValidSites(sites))
-    })
-    .catch((e) => {
-      console.log('Error fetching sites', e)
-      setSites(ensureValidSites([]))
-    })
-  }, []);
-
-  return sites;
+export const saveSites = async (siteList) => {
+  return new thenChrome.storage.sync.set({'page-topSites': siteList});
 }
