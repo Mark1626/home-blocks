@@ -4,7 +4,7 @@ fileignoreconfig:
   ignore_detectors: []
 fileignoreconfig:
 - filename: config/env.js
-  checksum: 0c994ad5bc2ff02e636cfc27bd3b57fd42ab5705ee111041a21ae710638370a1
+  checksum: c53f58b5cfef19de2b0a069a34e94826d6400c762e805c94b9dcec96c367cebd
   ignore_detectors: []
 - filename: config/jest/fileTransform.js
   checksum: 90b04b8ad823f8166ea6a4be0a426787ac25ee569135cf4ecfd4c34577309072
