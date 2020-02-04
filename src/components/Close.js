@@ -1,11 +1,9 @@
 import styled from 'styled-components';
+import CloseIcon from '../assets/x.svg'
 
-const Close = styled.button`
-position: absolute;
-right: 0;
-border: none;
-background-color: inherit;
-font-size: 1em;
-`;
+const Close = styled(CloseIcon)`
+  position: absolute;
+  right: 0;
+`
 
 export default Close;

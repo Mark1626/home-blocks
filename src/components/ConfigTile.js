@@ -20,7 +20,7 @@ const ConfigTile = ({ index }) => {
   const closeConfig = () => setQuickConfig(false)
 
   const saveConfig = () => {
-    save().catch(e => console.log('Error while saving', e))
+    save(newSites).catch(e => console.log('Error while saving', e))
     setSites(newSites)
     closeConfig()
   }

@@ -2,9 +2,15 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Close from './Close'
 import ConfigContext from '../providers/ConfigContext'
+import SiteContext from '../providers/SiteContext'
 
 const Tile = ({ index, url, character, color, title }) => {
   const { setQuickConfigIndex, setQuickConfig } = useContext(ConfigContext)
+  const { removeSite } = useContext(SiteContext)
+  const handleClear = async (event, index) => {
+    event.preventDefault()
+    removeSite(index)
+  }
   const handleClick = (event, index) => {
     event.preventDefault()
     setQuickConfig(true)
@@ -17,9 +23,7 @@ const Tile = ({ index, url, character, color, title }) => {
           color={color}
           onClick={event => handleClick(event, index)}
         >
-          <div className="top-buttons">
-            <Close>{url !== '' ? '✖' : ''}</Close>
-          </div>
+          <TopButtons>{url !== '' && <Close onClick={event => handleClear(event, index)} />}</TopButtons>
           <PageTileChar>{character}</PageTileChar>
           <PageTileTitle>{title}</PageTileTitle>
         </PageTileBlock>
@@ -27,6 +31,13 @@ const Tile = ({ index, url, character, color, title }) => {
     </>
   )
 }
+
+const TopButtons = styled.div`
+  position: relative;
+  width: 100%;
+  height: 25px;
+  margin-bottom: 10px;
+`;
 
 const PageTileChar = styled.span`
   display: block;
