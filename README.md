@@ -8,14 +8,6 @@ A Simple Customisable Home Page Chrome Extension built using [svelte](https://sv
 
 # Getting Started
 
-## Install from Firefox Addons
-
-https://addons.mozilla.org/en-US/firefox/addon/home-blocks/
-
-## Install from Chrome Web Store
-
-Coming Soon
-
 ## Building from source
 
 *Note that you will need to have [Node.js](https://nodejs.org) and Yarn installed.*
