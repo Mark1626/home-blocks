@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Home Blocks",
-    "version": "0.4.7",
+    "version": "0.4.8",
     "description": "Custom home page!",
     "chrome_url_overrides": {
       "newtab": "index.html"

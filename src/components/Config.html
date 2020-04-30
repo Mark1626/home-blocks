@@ -4,19 +4,26 @@
       <button class="close" on:click="closeConfig()">&#10006;</button>
     </div>
     <div class="main-content">
-      <ul class="config-list">
-        {#each sites as site, idx}
-          <li class="config-list-option">
-            <span>{idx+1}</span>
-            <input type="text" placeholder="Enter site title" on:input="updateSite(idx, 'title', event.target.value)" value="{site.title}">
-            <input type="text" placeholder="Enter URL" on:input="updateSite(idx, 'url', event.target.value)" value="{site.url}">
-            <input type="text" placeholder="Enter Character" on:input="updateSite(idx, 'character', event.target.value)" value="{site.character}">
-            <input type="color" on:input="updateSite(idx, 'color', event.target.value)" value="{site.color}">
-          </li>
-        {:else}
-          <li>No favourites as of now</li>
-        {/each}
-      </ul>
+      <div class="notifications">
+        <span>Notifications</span>
+        <input class="notifications" type="checkbox" id="notifications" on:input="toggleNotifications()" checked="{notifications}">
+      </div>
+      <div class="config-sites">
+        <span class="config-sites-title">Config</span>
+        <ul class="config-list">
+          {#each sites as site, idx}
+            <li class="config-list-option">
+              <span>{idx+1}</span>
+              <input type="text" placeholder="Enter site title" on:input="updateSite(idx, 'title', event.target.value)" value="{site.title}">
+              <input type="text" placeholder="Enter URL" on:input="updateSite(idx, 'url', event.target.value)" value="{site.url}">
+              <input type="text" placeholder="Enter Character" on:input="updateSite(idx, 'character', event.target.value)" value="{site.character}">
+              <input type="color" on:input="updateSite(idx, 'color', event.target.value)" value="{site.color}">
+            </li>
+          {:else}
+            <li>No favourites as of now</li>
+          {/each}
+        </ul>
+      </div>
     </div>
     <div class="bottom-buttons">
       <button on:click="handleClose()">Save & Close</button>
@@ -31,6 +38,9 @@
   export default {
     // TODO Validate max-length of title, char
     methods: {
+      toggleNotifications() {
+        this.store.toggleNotifications();
+      },
       closeConfig() {
         this.store.set({showConfig: false});
       },
@@ -74,6 +84,18 @@
   .main-content {
     height: 50vh;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+  }
+  .notifications {
+    margin-bottom: 5px;
+  }
+  .notifications span {
+    margin-right: 4px;
+  }
+  .config-sites-title {
+    display: block;
+    margin-bottom: 5px;
   }
   .config {
     position: fixed;
@@ -127,5 +149,8 @@
     display: inline-block;
     margin-right: 2px;
     width: 16px;
+  }
+  .notifications {
+    display: inline-block;
   }
 </style>

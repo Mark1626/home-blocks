@@ -8,6 +8,7 @@ class HomePageStore extends Store {
 
   async init() {
     const sites = await API.getSites();
+    const notifications = await API.getNotificationStatus();
     let quotes = [];
     let rawQuotes = await API.getQuotes();
     rawQuotes = rawQuotes.length == 0
@@ -17,7 +18,16 @@ class HomePageStore extends Store {
     // Select quote before the quotes object is stringified
     const quote = rawQuotes[Math.floor(Math.random() * rawQuotes.length)];
     quotes = quotes.join('\n');
-    this.set({sites, quotes, quote});
+    this.set({sites, quotes, quote, notifications});
+  }
+
+  async toggleNotifications() {
+    const notificationStatus = !this.get().notifications
+    console.log(`Here ${notificationStatus}`)
+    this.set({
+      notifications: notificationStatus
+    });
+    await API.toggleNotifications(notificationStatus);
   }
 
   deleteSite(idx) {

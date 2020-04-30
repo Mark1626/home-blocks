@@ -1,5 +1,8 @@
 const clearNotification = () =>
-  setTimeout(() => chrome.notifications.clear('home-blocks-notifications'), 10000);
+  setTimeout(
+    () => chrome.notifications.clear('home-block-notifications'),
+    10000
+  );
 
 chrome.storage.sync.get(['home-block-quotes'], (results) => {
   if (typeof results['home-block-quotes'] === 'undefined') {
@@ -9,16 +12,25 @@ chrome.storage.sync.get(['home-block-quotes'], (results) => {
   clearNotification();
   setInterval(
     () =>
-      chrome.notifications.create(
-        'home-blocks-notifications',
-        {
-          type: 'basic',
-          title: 'Home Blocks',
-          iconUrl: './public/assets/bg.jpg',
-          message: quotes[Math.floor(Math.random() * quotes.length)],
-        },
-        clearNotification
-      ),
-    36000
+      chrome.storage.sync.get('home-block-notifications', (res) => {
+        if (typeof res['home-block-notifications'] === 'undefined') {
+          res['home-block-notifications'] = true;
+          chrome.storage.sync.set({ 'home-block-notifications': true });
+        }
+
+        if (res['home-block-notifications']) {
+          chrome.notifications.create(
+            'home-block-notifications',
+            {
+              type: 'basic',
+              title: 'Home Blocks',
+              iconUrl: './public/assets/bg.jpg',
+              message: quotes[Math.floor(Math.random() * quotes.length)],
+            },
+            clearNotification
+          );
+        }
+      }),
+    1800000
   );
 });

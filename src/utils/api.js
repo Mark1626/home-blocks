@@ -53,6 +53,18 @@ function exportSites(sites) {
   document.body.removeChild(link);
 }
 
+async function getNotificationStatus() {
+  const results = await thenChrome.storage.sync.get(['home-block-notifications']);
+  if (typeof results['home-block-notifications'] === 'undefined') {
+    results['home-block-notifications'] = false;
+  }
+  return results['home-block-notifications'];
+}
+
+async function toggleNotifications(notificationsStatus) {
+  new thenChrome.storage.sync.set({'home-block-notifications': notificationsStatus});
+}
+
 function getQuotes() {
   return thenChrome.storage.sync.get(['home-block-quotes']).then((results) => {
     if (typeof results['home-block-quotes'] === 'undefined') {
@@ -79,5 +91,7 @@ export default {
   exportSites: exportSites,
   colors,
   getQuotes,
-  setQuotes
+  setQuotes,
+  getNotificationStatus,
+  toggleNotifications
 };
