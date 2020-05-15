@@ -3,6 +3,10 @@
     <div class="top-buttons">
       <button class="close" on:click="closeConfig()">&#10006;</button>
     </div>
+    <div class="notifications">
+      <span>Show Quotes as Notifications</span>
+      <input class="notifications" type="checkbox" id="notifications" on:input="toggleNotifications()" checked="{notifications}">
+    </div>
     <span>Quotes must be entered one per line, must start with a "- "</span>
     <textarea class="quote-area" on:input="updateQuotes(event.target.value)">{quotes}</textarea>
     <div class="bottom-buttons">
@@ -14,6 +18,9 @@
 <script>
     export default {
       methods: {
+        toggleNotifications() {
+          this.store.toggleNotifications();
+        },
         updateQuotes(quotes) {
           clearTimeout(debounce);
           var debounce = setTimeout(() => {

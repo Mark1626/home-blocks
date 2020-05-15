@@ -4,10 +4,6 @@
       <button class="close" on:click="closeConfig()">&#10006;</button>
     </div>
     <div class="main-content">
-      <div class="notifications">
-        <span>Notifications</span>
-        <input class="notifications" type="checkbox" id="notifications" on:input="toggleNotifications()" checked="{notifications}">
-      </div>
       <div class="config-sites">
         <span class="config-sites-title">Config</span>
         <ul class="config-list">
@@ -38,9 +34,6 @@
   export default {
     // TODO Validate max-length of title, char
     methods: {
-      toggleNotifications() {
-        this.store.toggleNotifications();
-      },
       closeConfig() {
         this.store.set({showConfig: false});
       },

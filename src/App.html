@@ -5,12 +5,12 @@
 <ConfigButton/>
 {#if $showConfigQuotes }
   <div transition:fade="{delay: 0, duration: 100}">
-    <ConfigQuotes quotes="{$quotes}"/>
+    <ConfigQuotes quotes="{$quotes}" notifications="{$notifications}"/>
   </div>
 {/if}
 {#if $showConfig }
   <div transition:fade="{delay: 0, duration: 100}">
-    <Config sites="{$sites}" notifications="{$notifications}"/>
+    <Config sites="{$sites}"/>
   </div>
 {/if}
 {#if $showQuickConfig}
