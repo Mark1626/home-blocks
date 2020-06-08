@@ -11,5 +11,10 @@
         "background.js"
       ]
     },
+    "icons": {
+      "16": "homeblock16.png",
+      "48": "homeblock48.png",
+      "128": "homeblock128.png"
+    },
     "permissions": ["storage", "notifications"]
 }

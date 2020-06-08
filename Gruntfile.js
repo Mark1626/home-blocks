@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: ['./index.html', './manifest.json', './background.js'],
+            src: ['./index.html', './manifest.json', './background.js', './homeblock16.png', './homeblock48.png', './homeblock128.png'],
             dest: './home-blocks/'
           },
           { expand: true, src: ['./public/**'], dest: './home-blocks/' }
