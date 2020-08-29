@@ -1,12 +1,12 @@
 # Home Blocks
 
-[![Build Status](https://travis-ci.com/M4rk9696/home-blocks.svg?branch=master)](https://travis-ci.com/M4rk9696/home-blocks)
-
 A Simple Customisable Home Page Chrome Extension built using [svelte](https://svelte.technology/)
 
 ![alt text](./demo.png)
 
 # Getting Started
+
+Unfortunately, I took down the extension from the extension store. Build from source to use it
 
 ## Building from source
 
@@ -24,7 +24,6 @@ The final build will be in home-blocks folder.
 
 ## To-Do
 * Add Test Cases
-* Publish to Chrome Web Store
 
 ## License
 
