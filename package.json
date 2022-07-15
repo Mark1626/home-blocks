@@ -14,7 +14,7 @@
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.11.0",
     "style-loader": "^1.2.1",
-    "svelte": "^2.0.0",
+    "svelte": "^3.49.0",
     "svelte-loader": "2.9.0",
     "svelte-transitions": "^1.2.0",
     "webpack": "^4.44.1",
