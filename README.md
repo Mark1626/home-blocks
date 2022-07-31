@@ -1,4 +1,8 @@
-# Home Blocks
+# Home Blocks [Archived]
+
+This repo is archived.
+
+---
 
 A Simple Customisable Home Page Chrome Extension built using [svelte](https://svelte.technology/)
 
